@@ -1,9 +1,28 @@
 # Two sum
 
-nums = [2, 7, 11, 15]
-target = 9
+class solution:
+    def twosum(self, nums ,target):
+        l = 0
+        r = len(nums) -1
+        while l < r :
+            sum = nums[l] + nums[r]
+            if sum == target:
+                return True
+            elif sum < target:
+                l += 1
+            else:
+                r -= 1
+        return False
 
-for i in range(len(nums)):
-    for j in range(i + 1, len(nums)):
-        if nums[i] + nums[j] == target:
-            print([i, j])
+
+
+
+obj = solution()
+nums = [2, 7, 11, 15]
+target = -13
+print(obj.twosum(nums , target))
+
+
+# complixity
+# time = O(n)
+# space = O(1)
